@@ -9,4 +9,5 @@ public interface UserDao {
 	public User getUserById(int id);
 	public User getUserByEmail(String email);
 	public int createUser(User u);
+	public User updateUser(User u);
 }

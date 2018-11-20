@@ -11,6 +11,19 @@ import com.project2.util.HibernateUtil;
 
 public class UserDaoImpl implements UserDao {
 
+	private static UserDaoImpl userDao;
+	
+	private UserDaoImpl() {
+
+	}
+	
+	public static UserDaoImpl getUserDao() {
+		if(userDao == null) {
+			userDao = new UserDaoImpl();
+		}
+		return userDao;
+	}
+	
 	@Override
 	public List<User> getUsers() {
 		Session s = HibernateUtil.getSession();
@@ -22,7 +35,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User getUserById(int id) {
 		Session s = HibernateUtil.getSession();
-		String hql = "from Bear where id = :idVar";
+		String hql = "from User_Table where id = :idVar";
 		Query<User> q = s.createQuery(hql, User.class);
 		q.setParameter("idVar", id);
 		User user = q.getSingleResult();
@@ -32,7 +45,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User getUserByEmail(String email) {
 		Session s = HibernateUtil.getSession();
-		String hql = "from Bear where email = :emailVar";
+		String hql = "from User_Table where email = :emailVar";
 		Query<User> q = s.createQuery(hql, User.class);
 		q.setParameter("emailVar", email);
 		User user = q.getSingleResult();
@@ -47,6 +60,12 @@ public class UserDaoImpl implements UserDao {
 		tx.commit();
 		s.close();
 		return userId;
+	}
+
+	@Override
+	public User updateUser(User u) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
