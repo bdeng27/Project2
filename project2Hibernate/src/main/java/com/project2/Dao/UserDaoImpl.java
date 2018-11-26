@@ -13,7 +13,7 @@ public class UserDaoImpl implements UserDao {
 
 	private static UserDaoImpl userDao;
 	
-	private UserDaoImpl() {
+	public UserDaoImpl() {
 
 	}
 	
@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getUsers() {
 		Session s = HibernateUtil.getSession();
-		List<User> users = s.createQuery("from User_Table", User.class).list();
+		List<User> users = s.createQuery("from User", User.class).list();
 		s.close();
 		return users;
 	}
@@ -35,7 +35,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User getUserById(int id) {
 		Session s = HibernateUtil.getSession();
-		String hql = "from User_Table where id = :idVar";
+		String hql = "from User where user_id = :idVar";
 		Query<User> q = s.createQuery(hql, User.class);
 		q.setParameter("idVar", id);
 		User user = q.getSingleResult();
@@ -45,7 +45,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User getUserByEmail(String email) {
 		Session s = HibernateUtil.getSession();
-		String hql = "from User_Table where email = :emailVar";
+		String hql = "from User where email = :emailVar";
 		Query<User> q = s.createQuery(hql, User.class);
 		q.setParameter("emailVar", email);
 		User user = q.getSingleResult();
@@ -64,8 +64,12 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User updateUser(User u) {
-		// TODO Auto-generated method stub
-		return null;
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		s.update(u);
+		tx.commit();
+		s.close();
+		return u;
 	}
 
 }

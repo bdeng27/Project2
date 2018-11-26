@@ -8,7 +8,7 @@
 			<generator class="increment"></generator>
 		</id>
 		<property name="type" column="EXPENSE_TYPE" type="org.hibernate.type.StringType"></property>
-		<property name="amount" column="EXPENSE_AMOUNT" type="org.hibernate.type.IntegerType"></property>
+		<property name="amount" column="EXPENSE_AMOUNT" type="org.hibernate.type.LongType"></property>
 		<property name="date" column="EXPENSE_DATE" type="org.hibernate.type.DateType"></property>
 		<property name="location" column="EXPENSE_LOCATION" type="org.hibernate.type.StringType"></property>
 		<many-to-one name="user" column="USER_ID" class="com.project2.model.User"></many-to-one>

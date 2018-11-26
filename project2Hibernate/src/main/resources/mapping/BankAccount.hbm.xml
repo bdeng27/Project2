@@ -7,9 +7,9 @@
 		<id name="accountId" column="ACCOUNT_ID">
 			<generator class="increment"></generator>
 		</id>
-		<property name="amount" column="ACCOUNT_AMOUNT" type="org.hibernate.type.IntegerType"></property>
+		<property name="amount" column="ACCOUNT_AMOUNT" type="org.hibernate.type.LongType"></property>
 		<property name="type" column="ACCOUNT_TYPE" type="org.hibernate.type.StringType"></property>
-		<property name="accountNumber" column="ACCOUNT_NUMBER" type="org.hibernate.type.IntegerType"></property>
+		<property name="accountNumber" column="ACCOUNT_NUMBER" type="org.hibernate.type.LongType"></property>
 		<many-to-one name="user" column="USER_ID" class="com.project2.model.User"></many-to-one>
 	</class>
 </hibernate-mapping>

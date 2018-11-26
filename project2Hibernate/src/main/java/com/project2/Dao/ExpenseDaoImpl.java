@@ -14,7 +14,7 @@ public class ExpenseDaoImpl implements ExpenseDao {
 
 	private static ExpenseDaoImpl expenseDao;
 	
-	private ExpenseDaoImpl() {
+	public ExpenseDaoImpl() {
 		
 	}
 	

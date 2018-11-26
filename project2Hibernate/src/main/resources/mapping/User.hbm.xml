@@ -10,6 +10,6 @@
 		<property name="email" type="org.hibernate.type.StringType" column="USER_EMAIL"></property>
 		<property name="password" type="org.hibernate.type.StringType" column="USER_PASSWORD"></property>
 		<property name="isManager" type="org.hibernate.type.IntegerType" column="IS_MANAGER"></property>
-		<property name="income" type="org.hibernate.type.IntegerType" column="USER_INCOME"></property>
+		<property name="income" type="org.hibernate.type.LongType" column="USER_INCOME"></property>
 	</class>
 </hibernate-mapping>

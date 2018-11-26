@@ -14,7 +14,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 
 	private static BankAccountDaoImpl bankAccountDao;
 	
-	private BankAccountDaoImpl() {
+	public BankAccountDaoImpl() {
 		
 	}
 	
@@ -29,7 +29,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 	public List<BankAccount> getAccountsByUserId(int userId) {
 		Session s = HibernateUtil.getSession();
 		List<BankAccount> accounts = new ArrayList<BankAccount>();
-		String hql = "from Bank_Account where user_is = :idVar";
+		String hql = "from BankAccount where user_id = :idVar";
 		Query<BankAccount> q = s.createQuery(hql, BankAccount.class);
 		q.setParameter("idVar", userId);
 		accounts = q.getResultList();
@@ -39,7 +39,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 	@Override
 	public BankAccount getAccountById(int accountId) {
 		Session s = HibernateUtil.getSession();
-		String hql = "from Bank_Account where account_id= :idVar";
+		String hql = "from BankAccount where account_id= :idVar";
 		Query<BankAccount> q = s.createQuery(hql, BankAccount.class);
 		q.setParameter("idVar", accountId);
 		BankAccount account = q.getSingleResult();
