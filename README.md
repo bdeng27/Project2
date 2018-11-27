@@ -20,8 +20,13 @@
 <h3>To run the src from dev branch</h3>
 
 <ol>
-  <li>Open node_module and download <b>map</b> and <b>chartist</b> from Dev branch.</li>
-  <li>Paste <b>map</b> to angular project - node_module - @ngui.</li>
+  <li>Open node_module and download <b>chartist</b> from Dev branch.</li>
   <li>Paste <b>chartist</b> to angular project - node_module - @types.</li>
+  <li>Within the angular project, open bash, type :
+  
+  
+  ```
+  $ npm install @ngui/map @types/googlemaps --save</li
+  ```
   <li>refresh</li>
   </ol>
