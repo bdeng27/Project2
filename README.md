@@ -22,7 +22,7 @@
 <ol>
   <li>Open node_module and download <b>chartist</b> from Dev branch.</li>
   <li>Paste <b>chartist</b> to angular project - node_module - @types.</li>
-  <li>Within the angular project, open bash, type :
+  <li>open bash, cd to root of the angular project, type :
   
   
   ```
@@ -30,4 +30,5 @@
   ```
   </li>
   <li>refresh</li>
+  <li>ng serve --open</li>
   </ol>
