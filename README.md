@@ -17,7 +17,7 @@
   <li>Junit</li> 
   </ul>
 
-<h3>To run the src fron dev branch</h3>
+<h3>To run the src from dev branch</h3>
 
 <ol>
   <li>Open node_module and download <b>map</b> and <b>chartist</b> from Dev branch.</li>
