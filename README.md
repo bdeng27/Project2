@@ -19,7 +19,9 @@
 
 <h3>To run the src fron dev branch</h3>
 
-1.Open node_module and download <b>map</b> and <b>chartist</b> from Dev branch.
-2.Paste <b>map</b> to angular project - node_module - @ngui.
-3.Paste <b>chartist</b> to angular project - node_module - @types.
-4.refresh
+<ol>
+  <li>Open node_module and download <b>map</b> and <b>chartist</b> from Dev branch.</li>
+  <li>Paste <b>map</b> to angular project - node_module - @ngui.</li>
+  <li>Paste <b>chartist</b> to angular project - node_module - @types.</li>
+  <li>refresh</li>
+  </ol>
