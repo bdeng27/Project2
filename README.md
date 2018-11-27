@@ -26,7 +26,8 @@
   
   
   ```
-  $ npm install @ngui/map @types/googlemaps --save</li
+  $ npm install @ngui/map @types/googlemaps --save
   ```
+  </li>
   <li>refresh</li>
   </ol>
