@@ -32,3 +32,9 @@
   <li>refresh</li>
   <li>ng serve --open</li>
   </ol>
+  <p>if chartist has no module found exception, cd to root angular project folder, try :
+  
+  ```
+  $ npm install --save @types/chartist
+  ```
+  </p>
