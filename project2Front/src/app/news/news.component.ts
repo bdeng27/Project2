@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+import { NewsService } from './news.service';
+
+declare var $:any;
 
 @Component({
-    selector: 'news-cmp',
-    moduleId: module.id,
-    templateUrl: 'news.component.html',
-    styleUrls: ['./news.component.css']
+  selector: 'news-component',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.css']
 })
 
-export class NewsComponent{}
-	
+export class NewsComponent{
+	news = {};
+	constructor(private NewsService: NewsService) {
+		this.NewsService.getNews().subscribe(data => this.news = data);
+		}
+}
+
+

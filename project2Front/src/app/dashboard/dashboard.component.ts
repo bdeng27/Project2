@@ -95,7 +95,7 @@ export class DashboardComponent implements OnInit{
         };
 
         new Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
-
+// Route the data to the percentage below
         new Chartist.Pie('#chartPreferences', {
           labels: ['62%','32%','6%'],
           series: [62, 32, 6]

@@ -26,3 +26,7 @@ label {
 #form-switch:checked~#login-form {
   display:none
 }
+#center-login-header {
+	margin:0 auto;
+	width:300px
+}
