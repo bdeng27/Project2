@@ -10,6 +10,6 @@ export class NewsService {
 	) {}
 	
 	getNews() {
-		return this.http.get(`https://hn.algolia.com/api/v1/search_by_date?query=finance&tags=story`).map((res:Response) => res.json());
+		return this.http.get(`https://hn.algolia.com/api/v1/search_by_date?query=personalfinace&tags=story`).map((res:Response) => res.json());
 		}
 		}

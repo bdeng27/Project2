@@ -14,7 +14,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'bankaccount', title: 'Bank Accounts', icon: 'ti-vector', class: ''},
     { path: 'table', title: 'Budget Log',  icon:'ti-view-list-alt', class: '' },
     { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
-    { path: 'news', title: 'News & Tips',  icon:'ti-text', class: '' }, 
+    { path: 'news', title: 'Budget News',  icon:'ti-world', class: '' }, 
     { path: 'maps', title: 'Maps',  icon:'ti-map', class: '' },
     { path: 'upgrade', title: 'Upgrade to PRO',  icon:'ti-export', class: 'active-pro' },
 ];
