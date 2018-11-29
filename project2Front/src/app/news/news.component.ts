@@ -5,7 +5,6 @@ import { NewsService } from './news.service';
 declare var $:any;
 
 @Component({
-  selector: 'news-component',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
