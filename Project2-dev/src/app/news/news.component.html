@@ -1,0 +1,9 @@
+<div id="center-things">
+<h2>Budget-News</h2>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item" *ngFor="let links of news.hits">
+      <a href={{links.url}} target="_blank">{{links.title}}</a>
+  </li>
+</ul>
+</div>
+
