@@ -12,18 +12,13 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
            
-                <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="ti-money"></i>
-                            <p>Record</p>
-                            <b class="caret"></b>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" data-backdrop="false">Add new income</button></li>
-                       <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#expenseModal" data-whatever="@mdo" data-backdrop="false">Add new expense</button></li>
-                        <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bankaccountModal" data-whatever="@mdo" data-backdrop="false">Add new bankaccount</button></li>
-                      </ul>
-                </li>
+<!--                 <li class="dropdown"> -->
+<!--                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"> -->
+<!--                             <i class="ti-money"></i> -->
+<!--                             <p>Record</p> -->
+<!--                             <b class="caret"></b> -->
+<!--                       </a> -->
+<!--                 </li> -->
                 <li>
                     <a href="#">
                         <i class="ti-user"></i><p>Logout</p>
@@ -35,6 +30,8 @@
 
 
 <!--  modal box for income -->
+
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -70,6 +67,8 @@
 </div>
 
 <!-- Modal box for expense -->
+
+
 <div class="modal fade" id="expenseModal" tabindex="-1" role="dialog" aria-labelledby="expenseModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -105,6 +104,8 @@
 </div>
 
 <!-- Modal box for bankaccount -->
+
+
 <div class="modal fade" id="bankaccountModal" tabindex="-1" role="dialog" aria-labelledby="bankaccountModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -127,7 +128,7 @@
           <div class="form-group">
             <div class="dropdown">
   			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-  			Dropdown button
+  			Types of Accounts
  			 </button>
   			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
    			 <li><a class="dropdown-item" href="#">Checking</a></li>
@@ -147,7 +148,155 @@
   </div>
 </div>
 
+<!--  modal box for obligation -->
+
+<div class="modal fade" id="obligationModal" tabindex="-1" role="dialog" aria-labelledby="obligationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="obligationModalLabel">New bankaccount entry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="amount-name" class="col-form-label">Name of the obligation</label>
+            <input type="text" class="form-control" id="amount-name">
+          </div>
+          <div class="form-group">
+            <label for="amount-name" class="col-form-label">Due amount</label>
+            <input type="text" class="form-control" id="amount-name">
+          </div>
+          <div class="form-group">
+            <div class="dropdown">
+  			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  			Payment Options
+ 			 </button>
+  			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+   			 <li><a class="dropdown-item" href="#">Cash</a></li>
+   			 <li><a class="dropdown-item" href="#">Checking</a></li>
+    		 <li><a class="dropdown-item" href="#">Saving</a></li>
+    		 <li><a class="dropdown-item" href="#">Credit Payment</a></li>
+ 			 </ul>
+		</div>
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!-- modal box for update- payment -->
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">Secure Payment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          
+          <!-- payment card body -->
+          <div class="flip-container" id="flip-toggle">
+
+    <div class="flipper">
+      <div class="card front">
+        
+        <div class="card-provider">
+          <div class="visa c-image">
+            <img src="https://i.imgur.com/NN9t7UH.png" alt="visa">
+          </div>
+
+          <div class="mastercard c-image">
+            <img src="https://i.imgur.com/bma7TBS.png" alt="mastercard">
+          </div>
+        </div>
+
+        <div class="card-number-wrap">
+          <label class="input-title" for="c-number">
+            Card Number*
+          </label>
+          <input type="text" name="c-number" id="c-number" class="input-field card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+        </div>
+
+        <div class="cardholder-name-wrap">
+          <label for="c-name" class="input-title cardholder-name"> Name on card*</label>
+          <input type="text" name="c-number" id="c-name" class="input-field cardholder-name" placeholder="John Doe" required>
+        </div>
+
+        <div class="card-expiry-wrap">
+          
+          <label class="input-title">Expiry Date*</label>
+          <div class="custom-dropdown">
+            <select name="month" class="input-field options">
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <select name="year" class="input-field options">
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>24</option>
+              <option>25</option>
+            </select>
+            
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="card back">
+        <!-- back content -->
+        <div class="black-stripe"></div>
+        <div class="cvv-wrap">
+          <label for="cvv-code" class="input-title">CVV Code*</label>
+          <input type="text" class="input-field cvv-code" id="cvv-code" placeholder="000" maxlength="3">
+        </div>
+        <div class="disclaimer">
+          If you need to take to an support about payment, contact email: BudgetManagement@outlook.com
+          <br/>
+          *Request identification
+        </div>
+      </div>
+    </div>
+  </div>
+        </form>
+        
+      </div>
+      	<div class="modal-footer">
+        	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       		 <button type="button" class="btn btn-primary">Done</button>
+     	 </div>
+    </div>
+  </div>
+</div>
 
 
