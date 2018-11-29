@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.project2.model.Expense" table="EXPENSE">
+		<id name="expenseId" column="EXPENSE_ID">
+			<generator class="increment"></generator>
+		</id>
+		<property name="type" column="EXPENSE_TYPE" type="org.hibernate.type.StringType"></property>
+		<property name="amount" column="EXPENSE_AMOUNT" type="org.hibernate.type.LongType"></property>
+		<property name="date" column="EXPENSE_DATE" type="org.hibernate.type.DateType"></property>
+		<property name="location" column="EXPENSE_LOCATION" type="org.hibernate.type.StringType"></property>
+		<many-to-one name="user" column="USER_ID" class="com.project2.model.User" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
