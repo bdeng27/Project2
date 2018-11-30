@@ -1,5 +1,7 @@
 package com.project2.model;
 
+import java.util.List;
+
 public class User {
 	private int userId;
 	private String name;
@@ -34,6 +36,12 @@ public class User {
 		this.isManager = isManager;
 		this.income = income;
 		this.username = username;
+	}
+	
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
 
 	public int getUserId() {
@@ -144,5 +152,18 @@ public class User {
 				+ ", password=" + password + ", isManager=" + isManager + ", income=" + income + "]";
 	}
 
-	
+	public User validate(List<User> userList) {
+		User u = null;
+		//System.out.println(this.getUsername());
+		//System.out.println(this.getPassword());
+		for (User temp : userList) {
+			//System.out.println(username.equals(temp.getUsername()));
+			//System.out.println(temp.getPassword());
+			if (this.getUsername().equals(temp.getUsername()) && this.getPassword().equals(temp.getPassword())) {
+				u = temp;
+				break;
+			}
+		}
+		return u;
+	}
 }

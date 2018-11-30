@@ -6,6 +6,9 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project2.Dao.BankAccountDao;
@@ -26,41 +29,31 @@ public class DashboardController {
 	BankAccountDao bd = BankAccountDaoImpl.getBankAccountDao();
 	ExpenseDao ed = ExpenseDaoImpl.getExpenseDao();
 	
-	@GetMapping(value="/UserInfo")
+	@RequestMapping(value="/UserInfo", method = RequestMethod.POST)
 	@ResponseBody
-	public User getUser() {
-		//User u1 = new User(100, "Ben Deng", "bdeng27@vt.edu", "bdeng27", "password", 0, 60000);
-		//User u1 = new User(1, "John Doe", "Jdoe@gmail.com", "JDoe", "password", 0, 1000000);
-		User u1 = ud.getUserById(1);
+	public User getUser(@RequestBody String val) {
+		int id = Integer.parseInt(val);
+		System.out.println(val);
+		User u1 = ud.getUserById(id);
 		return u1;
 	}
 	
-	@GetMapping(value="/BankInfo")
+	@RequestMapping(value="/BankInfo", method = RequestMethod.POST)
 	@ResponseBody
-	public List<BankAccount> getBankAccounts() {
-//		User u1 = new User(1, "John Doe", "Jdoe@gmail.com", "JDoe", "password", 0, 1000000);
-//		BankAccount b1 = new BankAccount(10000, "checking", 123456789, u1);
-//		BankAccount b2 = new BankAccount(1000, "saving", 1234, u1);
-//		BankAccount[] bankList = new BankAccount[2];
-//		bankList[0] = b1;
-//		bankList[1] = b2;
-		
-		List<BankAccount> bankList = bd.getAccountsByUserId(1);
+	public List<BankAccount> getBankAccounts(@RequestBody String val) {
+		int id = Integer.parseInt(val);
+		List<BankAccount> bankList = bd.getAccountsByUserId(id);
 		System.out.println(bankList);
 		return bankList;
 	}
 	
-	@GetMapping(value="/Expenses")
+	@RequestMapping(value="/Expenses", method = RequestMethod.POST)
 	@ResponseBody
-	public Expense[] getExpenses() {
-		User u1 = new User(1, "John Doe", "Jdoe@gmail.com", "JDoe", "password", 0, 1000000);
-		Expense e1 = new Expense("Rent", 100, Date.valueOf("2018-08-10"), "", u1);
-		Expense e2 = new Expense("Power Bill", 100, Date.valueOf("2018-08-10"), "", u1);
-		Expense[] expenseList = new Expense[2];
-		expenseList[0] = e1;
-		expenseList[1] = e2;
-		
-		return expenseList;
+	public List<Expense> getExpenses(@RequestBody String val) {
+		int id = Integer.parseInt(val);
+		List<Expense> expList = ed.getExpensesByUserId(id);
+		System.out.println(expList);
+		return expList;
 	}
 	
 	@GetMapping(value="/test")
